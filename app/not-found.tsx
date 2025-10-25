@@ -8,7 +8,7 @@ function NotFound() {
   const router = useRouter();
 
   useEffect(() => {
-    const timer = setTimeout(() => router.push("/"), 300);
+    const timer = setTimeout(() => router.push("/"), 3000);
     return () => clearTimeout(timer);
   }, [router]);
 
