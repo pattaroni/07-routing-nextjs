@@ -4,9 +4,11 @@ import { useParams } from "next/navigation";
 import { fetchSingleNote } from "@/lib/api";
 import css from "./NoteDetails.module.css";
 import Loader from "@/components/Loader/Loader";
+import { useRouter } from "next/navigation";
 
-const NoteDetailsClient = () => {
+export default function NoteDetailsClient() {
   const { id } = useParams<{ id: string }>();
+  const router = useRouter();
 
   const { data: note, error } = useQuery({
     queryKey: ["note", id],
@@ -18,6 +20,13 @@ const NoteDetailsClient = () => {
   return (
     <main>
       <div className={css.container}>
+        <button
+          type="button"
+          onClick={() => router.back()}
+          className={css.backBtn}
+        >
+          ✕
+        </button>
         <div className={css.item}>
           <div className={css.header}>
             <h2>{note.title}</h2>
@@ -28,6 +37,4 @@ const NoteDetailsClient = () => {
       </div>
     </main>
   );
-};
-
-export default NoteDetailsClient;
+}

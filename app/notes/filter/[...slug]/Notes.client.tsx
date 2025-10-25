@@ -12,11 +12,7 @@ import NoteList from "@/components/NoteList/NoteList";
 import Modal from "@/components/Modal/Modal";
 import NoteForm from "@/components/NoteForm/NoteForm";
 
-export default function Notes({
-  initialCategory = "",
-}: {
-  initialCategory?: string;
-}) {
+function Notes({ initialCategory = "" }: { initialCategory?: string }) {
   const [query, setQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -73,3 +69,5 @@ export default function Notes({
     </div>
   );
 }
+
+export default Notes;

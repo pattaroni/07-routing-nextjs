@@ -4,13 +4,13 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import Notes from "../../Notes.client";
+import Notes from "./Notes.client";
 
 type Props = {
   params: Promise<{ slug: string[] }>;
 };
 
-export default async function NotesByCategory({ params }: Props) {
+async function NotesByCategory({ params }: Props) {
   const { slug } = await params;
   const category =
     slug[0] === "all" ? "" : slug[0].charAt(0).toUpperCase() + slug[0].slice(1);
@@ -28,3 +28,5 @@ export default async function NotesByCategory({ params }: Props) {
     </HydrationBoundary>
   );
 }
+
+export default NotesByCategory;
