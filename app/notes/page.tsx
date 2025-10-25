@@ -1,7 +1,0 @@
-import { redirect } from "next/navigation";
-
-function NotesPage() {
-  redirect("/notes/filter/all");
-}
-
-export default NotesPage;
