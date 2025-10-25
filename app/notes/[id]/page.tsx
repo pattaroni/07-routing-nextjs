@@ -10,7 +10,7 @@ type NotDetailsProps = {
   params: Promise<{ id: string }>;
 };
 
-const NoteDetails = async ({ params }: NotDetailsProps) => {
+export default async function NoteDetails({ params }: NotDetailsProps) {
   const { id } = await params;
   const queryClient = new QueryClient();
 
@@ -24,6 +24,4 @@ const NoteDetails = async ({ params }: NotDetailsProps) => {
       <NoteDetailsClient />
     </HydrationBoundary>
   );
-};
-
-export default NoteDetails;
+}
