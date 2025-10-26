@@ -80,3 +80,8 @@
   background-color: #0d6efd;
   color: #ffffff;
 }
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
